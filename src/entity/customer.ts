@@ -16,6 +16,10 @@ export class Customer {
     this.validate()
   }
 
+  get id(): string {
+    return this._id
+  }
+
   private validate() {
     if (this._id.length === 0) {
       throw new Error('Id is required')
@@ -39,6 +43,10 @@ export class Customer {
 
   deactivate(): void {
     this._active = false
+  }
+
+  get Address(): Address {
+    return this._address
   }
 
   set Address(address: Address) {
