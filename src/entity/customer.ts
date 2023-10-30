@@ -20,6 +20,10 @@ export class Customer {
     return this._id
   }
 
+  get name(): string {
+    return this._name
+  }
+
   private validate() {
     if (this._id.length === 0) {
       throw new Error('Id is required')
@@ -32,6 +36,10 @@ export class Customer {
   changeName(name: string): void {
     this._name = name
     this.validate()
+  }
+
+  isActive(): boolean {
+    return this._active
   }
 
   activate(): void {
