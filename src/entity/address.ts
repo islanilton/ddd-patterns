@@ -22,7 +22,7 @@ export class Address {
     this.validate()
   }
 
-  private validate() {
+  private validate(): boolean {
     if (this._street.length === 0) {
       throw new Error('Street is required')
     }
@@ -38,6 +38,8 @@ export class Address {
     if (this._number === 0) {
       throw new Error('Number is required')
     }
+
+    return true
   }
 
   toString() {

@@ -20,7 +20,7 @@ export class Order {
     this.validate()
   }
 
-  private validate() {
+  private validate(): boolean {
     if (this._id.length === 0) {
       throw new Error('Id is required')
     }
@@ -30,9 +30,15 @@ export class Order {
     if (this._items.length === 0) {
       throw new Error('Items quantity is must be greater than 0')
     }
+
+    if (this._items.some((item) => item.quantity <= 0)) {
+      throw new Error('Quantity must be greater than 0')
+    }
+
+    return true
   }
 
   total(): number {
-    return this._items.reduce((acc, item) => acc + item.price, 0)
+    return this._items.reduce((acc, item) => acc + item.total(), 0)
   }
 }

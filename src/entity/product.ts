@@ -34,7 +34,7 @@ export class Product {
     this.validate()
   }
 
-  private validate() {
+  private validate(): boolean {
     if (this._id.length === 0) {
       throw new Error('Id is required')
     }
@@ -44,5 +44,7 @@ export class Product {
     if (this._price < 0) {
       throw new Error('Price must be greater than 0')
     }
+
+    return true
   }
 }
