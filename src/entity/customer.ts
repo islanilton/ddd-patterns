@@ -9,6 +9,7 @@ export class Customer {
   private _name: string
   private _address!: Address
   private _active = true
+  private _rewardPoints = 0
 
   constructor({ id, name }: CustomerProps) {
     this._id = id
@@ -18,6 +19,10 @@ export class Customer {
 
   get id(): string {
     return this._id
+  }
+
+  get rewardPoints(): number {
+    return this._rewardPoints
   }
 
   get name(): string {
@@ -61,5 +66,9 @@ export class Customer {
 
   set Address(address: Address) {
     this._address = address
+  }
+
+  addRewardPoints(points: number): void {
+    this._rewardPoints += points
   }
 }
