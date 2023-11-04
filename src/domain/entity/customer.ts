@@ -1,4 +1,4 @@
-import { Address } from '@/entity/address'
+import { Address } from '@/domain/entity/address'
 
 interface CustomerProps {
   id: string
