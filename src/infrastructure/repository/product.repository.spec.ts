@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize-typescript'
+import { ProductModel } from '@/infrastructure/db/sequelize/model/product.model'
 
 describe('Product repository unit test', () => {
   let sequelize: Sequelize
@@ -10,6 +11,9 @@ describe('Product repository unit test', () => {
       logging: false,
       sync: { force: true },
     })
+
+    sequelize.addModels([ProductModel])
+    await sequelize.sync()
   })
 
   afterEach(async () => {
