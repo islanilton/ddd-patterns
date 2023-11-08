@@ -71,4 +71,8 @@ export class Customer {
   addRewardPoints(points: number): void {
     this._rewardPoints += points
   }
+
+  changeAddress(address: Address): void {
+    this._address = address
+  }
 }
