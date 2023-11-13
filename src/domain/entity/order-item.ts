@@ -38,6 +38,10 @@ export class OrderItem {
     return this._price
   }
 
+  get productId(): string {
+    return this._productId
+  }
+
   total(): number {
     return this._price * this._quantity
   }
