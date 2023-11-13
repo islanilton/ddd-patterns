@@ -32,6 +32,18 @@ export class Order {
     return this._items
   }
 
+  addItems(items: OrderItem[]): void {
+    items.forEach((item: OrderItem) => {
+      const foundItem: OrderItem = this._items.find(
+        (orderItem: OrderItem) => orderItem.id === item.id,
+      )
+
+      if (!foundItem) {
+        this._items.push(item)
+      }
+    })
+  }
+
   private validate(): boolean {
     if (this._id.length === 0) {
       throw new Error('Id is required')
