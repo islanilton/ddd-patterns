@@ -1,16 +1,16 @@
 import { Sequelize } from 'sequelize-typescript'
-import { CustomerModel } from '@/infrastructure/db/sequelize/model/customer.model'
-import { CustomerRepository } from '@/infrastructure/repository/customer.repository'
+import { CustomerModel } from '@/infrastructure/customer/repository/sequelize/customer.model'
+import { CustomerRepository } from '@/infrastructure/customer/repository/sequelize/customer.repository'
 import { Customer } from '@/domain/customer/entity/customer'
 import { Address } from '@/domain/customer/value-object/address'
-import { OrderModel } from '@/infrastructure/db/sequelize/model/order.model'
-import { OrderItemModel } from '@/infrastructure/db/sequelize/model/order-item.model'
-import { ProductModel } from '@/infrastructure/db/sequelize/model/product.model'
-import { ProductRepository } from '@/infrastructure/repository/product.repository'
+import { OrderModel } from '@/infrastructure/order/repository/sequelize/order.model'
+import { OrderItemModel } from '@/infrastructure/order/repository/sequelize/order-item.model'
+import { ProductModel } from '@/infrastructure/product/repository/sequelize/product.model'
+import { ProductRepository } from '@/infrastructure/product/repository/sequelize/product.repository'
 import { Product } from '@/domain/product/entity/product'
 import { OrderItem } from '@/domain/checkout/entity/order-item'
 import { Order } from '@/domain/checkout/entity/order'
-import { OrderRepository } from '@/infrastructure/repository/order.repository'
+import { OrderRepository } from '@/infrastructure/order/repository/sequelize/order.repository'
 
 describe('Order repository unit test', () => {
   let sequelize: Sequelize

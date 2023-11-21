@@ -6,8 +6,8 @@ import {
   ForeignKey,
   BelongsTo,
 } from 'sequelize-typescript'
-
-import { ProductModel, OrderModel } from './'
+import { ProductModel } from '@/infrastructure/product/repository/sequelize/product.model'
+import { OrderModel } from './'
 
 @Table({
   tableName: 'orders_items',
