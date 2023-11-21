@@ -1,4 +1,4 @@
-import { EventInterface } from '@/domain/event/@shared/event.interface'
+import { EventInterface } from '@/domain/@shared/event/event.interface'
 
 export class ProductCreatedEvent implements EventInterface {
   dateTimeOccurred: Date

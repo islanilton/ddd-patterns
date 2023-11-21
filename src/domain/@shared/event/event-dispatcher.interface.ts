@@ -1,5 +1,5 @@
-import { EventInterface } from '@/domain/event/@shared/event.interface'
-import { EventHandlerInterface } from '@/domain/event/@shared/event-handler.interface'
+import { EventInterface } from '@/domain/@shared/event/event.interface'
+import { EventHandlerInterface } from '@/domain/@shared/event/event-handler.interface'
 
 export interface EventDispatcherInterface {
   notify(event: EventInterface): void

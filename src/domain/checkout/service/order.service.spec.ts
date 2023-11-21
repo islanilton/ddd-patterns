@@ -1,9 +1,9 @@
-import { Order } from '@/domain/entity/order'
-import { Product } from '@/domain/entity/product'
-import { OrderItem } from '@/domain/entity/order-item'
-import { OrderService } from '@/domain/service/order.service'
-import { Address } from '@/domain/entity/address'
-import { Customer } from '@/domain/entity/customer'
+import { Order } from '@/domain/checkout/entity/order'
+import { Product } from '@/domain/product/entity/product'
+import { OrderItem } from '@/domain/checkout/entity/order-item'
+import { OrderService } from '@/domain/checkout/service/order.service'
+import { Address } from '@/domain/customer/value-object/address'
+import { Customer } from '@/domain/customer/entity/customer'
 
 describe('Order service unit test', () => {
   it('should place an order', () => {

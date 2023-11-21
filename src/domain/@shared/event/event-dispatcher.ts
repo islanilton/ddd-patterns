@@ -1,6 +1,6 @@
-import { EventDispatcherInterface } from '@/domain/event/@shared/event-dispatcher.interface'
-import { EventInterface } from '@/domain/event/@shared/event.interface'
-import { EventHandlerInterface } from '@/domain/event/@shared/event-handler.interface'
+import { EventDispatcherInterface } from '@/domain/@shared/event/event-dispatcher.interface'
+import { EventInterface } from '@/domain/@shared/event/event.interface'
+import { EventHandlerInterface } from '@/domain/@shared/event/event-handler.interface'
 
 export class EventDispatcher implements EventDispatcherInterface {
   private eventHandlers: { [eventName: string]: EventHandlerInterface[] } = {}
@@ -9,7 +9,15 @@ export class EventDispatcher implements EventDispatcherInterface {
     return this.eventHandlers
   }
 
-  notify(event: EventInterface): void {}
+  notify(event: EventInterface): void {
+    const eventName: string = event.eventName
+    if (!this.eventHandlers[eventName]) {
+      return
+    }
+    this.eventHandlers[eventName].forEach((eventHandler) => {
+      eventHandler.handle(event)
+    })
+  }
 
   register(eventName: string, eventHandler: EventHandlerInterface): void {
     if (!this.eventHandlers[eventName]) {
