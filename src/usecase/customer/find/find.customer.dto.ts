@@ -9,5 +9,6 @@ export interface OutputFindCustomerDto {
     city: string
     number: number
     zip: string
+    state: string
   }
 }
