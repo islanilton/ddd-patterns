@@ -35,4 +35,11 @@ describe('Unit Test Create Customer use case', () => {
       },
     })
   })
+
+  it('should return an error with name is missing', async () => {
+    const customerRepository = MockCustomerRepository()
+    const sut = new CreateCustomerUseCase(customerRepository)
+    input.name = ''
+    await expect(() => sut.execute(input)).rejects.toThrow('Name is required')
+  })
 })
